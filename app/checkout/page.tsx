@@ -21,7 +21,7 @@ const CheckoutPage = () => {
       setFormFields(formFields);
       setCartDetail(result);
       setTotal(total);
-    } catch {
+    } catch (e) {
       console.error('Error fetching data:', e);
     } finally {
       setLoading(false);
