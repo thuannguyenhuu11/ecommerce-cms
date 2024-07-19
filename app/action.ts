@@ -2,7 +2,7 @@
 import { ProductType } from '@/lib/interface';
 import { defineOneEntry } from 'oneentry';
 import { IFormsEntity } from 'oneentry/dist/forms/formsInterfaces';
-import { IProductsEntity } from 'oneentry/dist/products/productsInterfaces';
+import { IFilterParams, IProductsEntity } from 'oneentry/dist/products/productsInterfaces';
 import { title } from 'process';
 const {
   Admins,
@@ -70,7 +70,7 @@ const parseProductObject = (value: any) => {
 };
 
 export async function getProductsByCategory(url: string) {
-  const body = [
+  const body: IFilterParams[] = [
     {
       attributeMarker: 'price',
       conditionMarker: 'mth',
