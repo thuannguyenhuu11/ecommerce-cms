@@ -107,8 +107,14 @@ export const parseCartDetail = (cartDetails: any) => {
   return { result, total };
 };
 
+interface IFormAttribute {
+  localizeInfos: {
+    title: string;
+  };
+}
+
 const parseFormDetails = (form: IFormsEntity) => {
-  const formFields = form.attributes.map(att => att.localizeInfos.title);
+  const formFields = form.attributes.map((att: IFormAttribute) => att.localizeInfos.title);
   return formFields;
 };
 
